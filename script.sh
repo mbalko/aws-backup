@@ -1,7 +1,8 @@
 #!/bin/sh
 
 if [ $# != 2 ]; then
-  echo "Usage: $0 <file containing paths to folders which will be backed up> <s3:// url to bucket [and folder in it] without ending />"  exit
+  echo "Usage: $0 <file containing paths to folders which will be backed up> <s3:// url to bucket [and folder in it] without ending />"
+  exit
 fi
 
 PATHS="$1"
