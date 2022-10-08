@@ -20,6 +20,7 @@ cat $PATHS | while read line; do
   zip "$CURR_DIR/${SERVICE}_$STAMP.zip" -r $line > /dev/null
 done
 
-echo "Uploading to AWS"
+echo "Uploading to $BUCKET:"
+ls -lh $CURR_DIR
 aws s3 cp $CURR_DIR $BUCKET/$STAMP/ --recursive --storage-class INTELLIGENT_TIERING
 rm -rf $CURR_DIR
